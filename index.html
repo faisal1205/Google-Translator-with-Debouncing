@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Translator with Debouncing </title>
+    <style>
+          
+        #container{
+            display: flex;
+            /* border: 1px solid black; */
+            background-color: rgb(190, 184, 184);
+        }
+    
+        #output,#input{
+            flex: 1;
+            height:300px ;
+           margin: 5%;
+           border: 0.1px solid black;
+           background-color: rgb(190, 184, 184);
+        }
+        #inputText
+        {
+            height:250px ;
+            width: 90%;
+            background-color: rgb(238, 228, 228);
+        }
+  body{
+      background-color: rgb(190, 184, 184);
+  }
+  select{
+      background-color: teal;
+      color: white;
+  }
+    </style>
+</head>
+<body>
+    <div id="container">
+        
+        <div id="input">
+ <select name="" id="inputLanguage">
+     <option value="en">English</option>
+     <option value="hi">Hindi</option>
+ </select>
+            <!-- <button onclick="Translate()">Translate</button> -->
+ 
+         <textarea name="input"oninput="debounce(main,1000)" id="inputText" cols="30" rows="10" placeholder="Enter Text to Convert according to selected Language"></textarea>
+        </div>
+ 
+ 
+ 
+        <div id="output">
+         <select name="" id="outLanguage">
+             <option value="en">English</option>
+             <option value="hi">Hindi</option>
+         </select>
+             <p id="outputValue"></p>
+        </div>
+     </div>
+</body>
+</html>
+<script src="index.js"></script>
